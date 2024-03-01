@@ -20,6 +20,7 @@ Route::get('/{car_id}', [ApiclientCarController::class, 'show']);
 
 Route::middleware(['auth:sanctum', 'client'])->group(function () {
 
+    
     Route::prefix('reservations')->group(function () {
         Route::get('/user/{user_id}', [ApiReservationController::class, 'showAllByUserId']);
         Route::get('/{reservation_id}', [ApiReservationController::class, 'show']);
